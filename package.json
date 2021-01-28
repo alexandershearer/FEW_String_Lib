@@ -1,6 +1,6 @@
 {
-  "name": "@alex.shearer/src",
-  "version": "1.0.2",
+  "name": "@alex.shearer/string_lib",
+  "version": "1.0.3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
