@@ -1,12 +1,12 @@
-function upperFirst(str) {
+function capitalize(str) {
     return str[0].toUpperCase() + str.slice(1)
 }
 
-function toUpperCase(str) {
+function capitalizeWords(str) {
     return str.toUpperCase()
 }
 
-function upperWords(str) {
+function capitalizeHeadline(str) {
     const strArray = str.split(' ')
     let charArray = []
     for (let x = 0; x < strArray.length; x++) {
@@ -15,13 +15,13 @@ function upperWords(str) {
     return charArray.join(" ");
 }
 
-function removeSpace(str) {
+function removeExtraSpaces(str) {
     newStr = string.trim(str)
     const strArray = newStr.split(' ')
     return strArray.join(" ")
 }
 
-function kebabCase(str) {
+function kabobCase(str) {
     const strArray = str.split(' ')
     let newStr = ""
     for (let x = 0; x < strArray.length; x++) {
@@ -60,12 +60,47 @@ function camelCase(str) {
     return newStr
 }
 
-function firstToLast(str) {
-    const strArray = str.split('')
-    console.log(strArray)
-    firstLetter = strArray.shift()
-    console.log(firstLetter)
-    strArray.push()
+function shift(str) {
+    let letterArray = str.split('')
+    let firstLetter = letterArray[0]
+    let newArray = letterArray.slice(1)
+    newArray.push(firstLetter)
+    newArray = newArray.join('')
+    return newArray
 }
 
-firstToLast("Hello World")
+function makeHashTag(str) {
+    const capiltol = capitalizeWords(str).split(' ')
+
+    const result = capiltol.join('')
+
+    return '#' + result;
+}
+
+
+
+function isEmpty(str) {
+    let trimmedStr = str.trim()
+    let isEmpty = true
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == ' ' || str[i] == '\n' || str[i] == '\r' || str[i] == '\t') {
+
+        } else {
+            isEmpty = false
+        }
+    }
+    return isEmpty
+}
+
+module.exports = {
+    capitalize,
+    capitalizeWords,
+    capitalizeHeadline,
+    isEmpty,
+    removeExtraSpaces,
+    kabobCase,
+    snakeCase,
+    camelCase,
+    shift,
+    makeHashTag
+}
